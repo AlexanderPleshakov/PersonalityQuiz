@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  StartQuizViewController.swift
 //  PersonalityQuiz
 //
 //  Created by Александр Плешаков on 02.02.2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class StartQuizViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
