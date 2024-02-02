@@ -46,11 +46,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="hdl-s7-Kmt" userLabel="StartQuizButton">
-                                                <rect key="frame" x="66.666666666666686" y="54.333333333333314" width="185" height="34"/>
+                                                <rect key="frame" x="66.666666666666686" y="54.333333333333371" width="185" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Begin Personality Quiz"/>
+                                                <connections>
+                                                    <segue destination="8dv-8t-Tjq" kind="show" id="zb5-zy-4VP"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -89,12 +92,16 @@
                             <constraint firstItem="yHI-oS-uHv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="e7s-o4-ces"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainStackView" destination="yHI-oS-uHv" id="4mj-ol-5KY"/>
+                        <outlet property="titleStackView" destination="yd7-jF-2bu" id="VYH-jQ-H0b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="58" y="-2"/>
         </scene>
-        <!--View Controller-->
+        <!--Question-->
         <scene sceneID="Zpn-Aa-6wo">
             <objects>
                 <viewController id="SbW-ot-o9e" sceneMemberID="viewController">
@@ -104,25 +111,80 @@
                         <viewLayoutGuide key="safeArea" id="GGu-HC-gx4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Question" id="IaY-fQ-EXe"/>
+                    <connections>
+                        <segue destination="YkA-KM-IIt" kind="show" id="TiR-t8-l5w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zs9-Jp-yYb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="961" y="-2"/>
+            <point key="canvasLocation" x="1886.2595419847328" y="-2.1126760563380285"/>
         </scene>
-        <!--View Controller-->
+        <!--Results-->
         <scene sceneID="Ofc-fX-jvt">
             <objects>
                 <viewController id="YkA-KM-IIt" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w3n-vX-aNM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2mu-Ld-XRu">
+                                <rect key="frame" x="20" y="353" width="353" height="88.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are a 🐶 !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USF-SL-gt3">
+                                        <rect key="frame" x="36" y="0.0" width="281.33333333333331" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPN-rA-cxj">
+                                        <rect key="frame" x="133" y="68" width="87.333333333333314" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="X4Z-pj-PQV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="X4Z-pj-PQV" firstAttribute="trailing" secondItem="2mu-Ld-XRu" secondAttribute="trailing" constant="20" id="0Vw-9N-Zj3"/>
+                            <constraint firstItem="2mu-Ld-XRu" firstAttribute="leading" secondItem="X4Z-pj-PQV" secondAttribute="leading" constant="20" id="9vb-oS-OgE"/>
+                            <constraint firstItem="2mu-Ld-XRu" firstAttribute="top" secondItem="X4Z-pj-PQV" secondAttribute="top" constant="250" id="F0H-gm-nZ3"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Results" id="OBJ-qT-HcU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="4BB-Bc-Yvw"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EhT-sm-CAi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1815" y="-2"/>
+            <point key="canvasLocation" x="2741.2213740458014" y="-2.1126760563380285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="s8A-f3-K17">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8dv-8t-Tjq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="k20-1O-gdy"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AMa-oi-oSr">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Ovh-mu-zYo">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="SbW-ot-o9e" kind="relationship" relationship="rootViewController" id="RgD-RT-4AG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="39o-eI-8EW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="959.5419847328244" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>

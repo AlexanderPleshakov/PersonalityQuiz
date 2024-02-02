@@ -7,12 +7,22 @@
 
 import UIKit
 
-class StartQuizViewController: UIViewController {
+final class StartQuizViewController: UIViewController {
 
+    @IBOutlet weak var titleStackView: UIStackView!
+    @IBOutlet weak var mainStackView: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        configure()
     }
+    
+    private func configure() {
+        titleStackView.isUserInteractionEnabled = true
+        mainStackView.isUserInteractionEnabled = true
+    }
+    
 
 
 }
