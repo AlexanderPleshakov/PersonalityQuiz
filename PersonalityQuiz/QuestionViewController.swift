@@ -11,7 +11,7 @@ final class QuestionViewController: UIViewController {
     
     // MARK: Properties
     
-    private var questionIndex = 0
+    private var questionIndex = 2
     private var questions: [Question] = [
       Question(
         text: "Which food do you like the most?",
@@ -76,18 +76,45 @@ final class QuestionViewController: UIViewController {
         multipleStackView.isHidden = true
         rangedStackView.isHidden = true
         
-        navigationItem.title = "Question \(questionIndex + 1)"
-        
         let currentQuestion = questions[questionIndex]
+        let currentAnswers = currentQuestion.answers
+        let totalProgress = Float(questionIndex) / Float(questions.count)
+        
+        navigationItem.title = "Question \(questionIndex + 1)"
+        questionLabel.text = currentQuestion.text
+        questionProgressView.setProgress(totalProgress, animated: true)
+        
         
         switch currentQuestion.type {
         case .single:
-            singleStackView.isHidden = false
+            updateSingleStack(using: currentAnswers)
         case .multiple:
-            multipleStackView.isHidden = false
+            updateMultipleStack(using: currentAnswers)
         case .ranged:
-            rangedStackView.isHidden = false
+            updateRangedStack(using: currentAnswers)
         }
+        
+        
+    }
+    
+    private func updateSingleStack(using answers: [Answer]) {
+        singleStackView.isHidden = false
+        for index in 0..<singleButtons.count {
+            singleButtons[index].setTitle(answers[index].text, for: .normal)
+        }
+    }
+    
+    private func updateMultipleStack(using answers: [Answer]) {
+        multipleStackView.isHidden = false
+        for index in 0..<multipleLabels.count {
+            multipleLabels[index].text = answers[index].text
+        }
+    }
+    
+    private func updateRangedStack(using answers: [Answer]) {
+        rangedStackView.isHidden = false
+        rangedFirstValueLabel.text = answers.first?.text
+        rangedSecondValueLabel.text = answers.last?.text
     }
     
     // MARK: Actions
