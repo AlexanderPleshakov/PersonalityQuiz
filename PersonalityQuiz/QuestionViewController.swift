@@ -10,8 +10,8 @@ import UIKit
 final class QuestionViewController: UIViewController {
     
     // MARK: Properties
-    
-    private var questionIndex = 2
+    private var answersChosen: [Answer] = []
+    private var questionIndex = 0
     private var questions: [Question] = [
       Question(
         text: "Which food do you like the most?",
@@ -49,13 +49,18 @@ final class QuestionViewController: UIViewController {
 
     @IBOutlet private weak var questionLabel: UILabel!
     
+    // Third question
     @IBOutlet private weak var rangedStackView: UIStackView!
     @IBOutlet private weak var rangedFirstValueLabel: UILabel!
     @IBOutlet private weak var rangedSecondValueLabel: UILabel!
+    @IBOutlet private weak var rangedSlider: UISlider!
     
+    // Second question
     @IBOutlet private weak var multipleStackView: UIStackView!
     @IBOutlet private var multipleLabels: [UILabel]!
+    @IBOutlet var multipleSwitches: [UISwitch]!
     
+    // First question
     @IBOutlet private weak var singleStackView: UIStackView!
     @IBOutlet private var singleButtons: [UIButton]!
     
@@ -65,11 +70,18 @@ final class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        configure()
         updateUI()
     }
     
     // MARK: Methods
+    
+    private func configure() {
+        multipleSwitches.forEach {
+            $0.setOn(false, animated: false)
+        }
+    }
     
     private func updateUI() {
         singleStackView.isHidden = true
@@ -117,8 +129,44 @@ final class QuestionViewController: UIViewController {
         rangedSecondValueLabel.text = answers.last?.text
     }
     
+    private func nextQuestion() {
+        if questionIndex < 2 {
+            questionIndex += 1
+            updateUI()
+        }
+    }
+    
     // MARK: Actions
     
+    @IBAction private func buttonSingleAnswerTapped(_ sender: UIButton) {
+        let currentAnswer = questions[questionIndex].answers
+        
+        for index in 0..<singleButtons.count
+        where singleButtons[index] == sender {
+            answersChosen.append(currentAnswer[index])
+        }
+        
+        nextQuestion()
+    }
     
-
+    @IBAction private func buttonMultipleAnswerTapped() {
+        let currentAnswer = questions[questionIndex].answers
+        
+        for index in 0..<multipleLabels.count
+        where multipleSwitches[index].isOn {
+            answersChosen.append(currentAnswer[index])
+        }
+        
+        nextQuestion()
+    }
+    
+    @IBAction private func buttonRangedAnswerTapped() {
+        let currentAnswer = questions[questionIndex].answers
+        let index = Int(round(rangedSlider.value * Float(currentAnswer.count - 1)))
+        
+        answersChosen.append(currentAnswer[index])
+        
+        nextQuestion()
+    }
+    
 }
