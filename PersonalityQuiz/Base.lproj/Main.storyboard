@@ -269,6 +269,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Question" id="IaY-fQ-EXe"/>
                     <connections>
+                        <outlet property="multipleStackView" destination="vwL-MV-M68" id="P1e-TF-GxQ"/>
+                        <outlet property="rangedStackView" destination="J1L-Bg-Uyc" id="rni-xY-pmn"/>
+                        <outlet property="singleStackView" destination="Utu-VP-pGb" id="jWu-v1-e3I"/>
                         <segue destination="YkA-KM-IIt" kind="show" id="TiR-t8-l5w"/>
                     </connections>
                 </viewController>
@@ -288,7 +291,7 @@
                                 <rect key="frame" x="20" y="353" width="353" height="88.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are a 🐶 !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USF-SL-gt3">
-                                        <rect key="frame" x="36" y="0.0" width="281.33333333333337" height="60"/>
+                                        <rect key="frame" x="36" y="0.0" width="281.33333333333331" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

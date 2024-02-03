@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+
 struct Question {
     var text: String
     var type: ResponseType
@@ -14,5 +16,5 @@ struct Question {
 }
 
 enum ResponseType {
-    case single, multiply, ranged
+    case single, multiple, ranged
 }
