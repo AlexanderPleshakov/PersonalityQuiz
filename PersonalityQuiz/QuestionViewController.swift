@@ -47,9 +47,19 @@ final class QuestionViewController: UIViewController {
     
     // MARK: Outlets
 
+    @IBOutlet private weak var questionLabel: UILabel!
+    
     @IBOutlet private weak var rangedStackView: UIStackView!
+    @IBOutlet private weak var rangedFirstValueLabel: UILabel!
+    @IBOutlet private weak var rangedSecondValueLabel: UILabel!
+    
     @IBOutlet private weak var multipleStackView: UIStackView!
+    @IBOutlet private var multipleLabels: [UILabel]!
+    
     @IBOutlet private weak var singleStackView: UIStackView!
+    @IBOutlet private var singleButtons: [UIButton]!
+    
+    @IBOutlet private weak var questionProgressView: UIProgressView!
     
     // MARK: Life Cycle
     
