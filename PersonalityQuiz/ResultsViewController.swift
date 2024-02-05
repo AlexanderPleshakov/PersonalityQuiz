@@ -25,18 +25,38 @@ final class ResultsViewController: UIViewController {
     
     // MARK: Outlets
     
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     
     // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        displayResults()
     }
     
     // MARK: Methods
     
+    private func calculatePersonalityResults() -> AnimalType {
+        let frequencyOfAnswers = responses.reduce(into: [:]) { (counts, answer) in
+            counts[answer.type, default: 0] += 1
+        }
+        
+        let mostCommonAnswer = frequencyOfAnswers.sorted { $0.1 >
+           $1.1 }.first!.key
+        
+        return mostCommonAnswer
+
+    }
     
+    private func displayResults() {
+        let result = calculatePersonalityResults()
+        
+        resultLabel.text = "You are a \(result.rawValue)"
+        descriptionLabel.text = result.definition
+    }
     
     // MARK: Actions
     

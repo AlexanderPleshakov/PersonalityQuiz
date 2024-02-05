@@ -352,6 +352,10 @@
                     <navigationItem key="navigationItem" title="Results" id="OBJ-qT-HcU">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="4BB-Bc-Yvw"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="vPN-rA-cxj" id="pBL-Dm-s4C"/>
+                        <outlet property="resultLabel" destination="USF-SL-gt3" id="3rC-aU-B9C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EhT-sm-CAi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
