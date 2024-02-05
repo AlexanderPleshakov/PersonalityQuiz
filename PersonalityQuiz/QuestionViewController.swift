@@ -125,15 +125,20 @@ final class QuestionViewController: UIViewController {
     
     private func updateRangedStack(using answers: [Answer]) {
         rangedStackView.isHidden = false
+        rangedSlider.setValue(0.5, animated: false)
         rangedFirstValueLabel.text = answers.first?.text
         rangedSecondValueLabel.text = answers.last?.text
     }
     
     private func nextQuestion() {
-        if questionIndex < 2 {
-            questionIndex += 1
-            updateUI()
+        questionIndex += 1
+        
+        guard questionIndex < questions.count else {
+            performSegue(withIdentifier: "Results", sender: nil)
+            return
         }
+        
+        updateUI()
     }
     
     // MARK: Actions
@@ -167,6 +172,9 @@ final class QuestionViewController: UIViewController {
         answersChosen.append(currentAnswer[index])
         
         nextQuestion()
+    }
+    @IBSegueAction func showResultsSegue(_ coder: NSCoder) -> ResultsViewController? {
+        return  ResultsViewController(coder: coder, responses: answersChosen)
     }
     
 }

@@ -308,7 +308,7 @@
                         <outletCollection property="multipleSwitches" destination="3Ou-Fz-UZw" collectionClass="NSMutableArray" id="jSs-gt-zrw"/>
                         <outletCollection property="multipleSwitches" destination="0q8-EM-Si6" collectionClass="NSMutableArray" id="qq1-OL-2QI"/>
                         <outletCollection property="multipleSwitches" destination="R7H-Qc-SAv" collectionClass="NSMutableArray" id="MGO-vk-wrF"/>
-                        <segue destination="YkA-KM-IIt" kind="show" id="TiR-t8-l5w"/>
+                        <segue destination="YkA-KM-IIt" kind="show" identifier="Results" destinationCreationSelector="showResultsSegue:" id="TiR-t8-l5w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zs9-Jp-yYb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
