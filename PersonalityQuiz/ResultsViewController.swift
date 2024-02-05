@@ -34,10 +34,16 @@ final class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        displayResults()
+        configure()
     }
     
     // MARK: Methods
+    
+    private func configure() {
+        navigationItem.hidesBackButton = true
+        
+        displayResults()
+    }
     
     private func calculatePersonalityResults() -> AnimalType {
         let frequencyOfAnswers = responses.reduce(into: [:]) { (counts, answer) in
