@@ -16,90 +16,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yHI-oS-uHv" userLabel="Main Stack View">
-                                <rect key="frame" x="30" y="59" width="333" height="759"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ega-N3-bNI">
+                                <rect key="frame" x="20" y="374.66666666666669" width="353" height="127.66666666666669"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xQ2-C1-HAs" userLabel="Emodji Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="333" height="55"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐶" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElM-d7-hn2" userLabel="DogLabel">
-                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="55"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐸" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEb-8Y-ROk" userLabel="CatLabel">
-                                                <rect key="frame" x="166.66666666666663" y="0.0" width="166.33333333333337" height="55"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yd7-jF-2bu">
-                                        <rect key="frame" x="7.3333333333333428" y="335.33333333333331" width="318.33333333333326" height="88.333333333333314"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which Animal Are You?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJz-xU-gms" userLabel="QuizTitle">
-                                                <rect key="frame" x="0.0" y="0.0" width="318.33333333333331" height="34.333333333333336"/>
-                                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="hdl-s7-Kmt" userLabel="StartQuizButton">
-                                                <rect key="frame" x="66.666666666666686" y="54.333333333333371" width="185" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Begin Personality Quiz"/>
-                                                <connections>
-                                                    <segue destination="8dv-8t-Tjq" kind="show" id="zb5-zy-4VP"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tww-cS-8bp" userLabel="Emodji Stack View">
-                                        <rect key="frame" x="0.0" y="704" width="333" height="55"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyQ-fh-B1t" userLabel="TurtleLabel">
-                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="55"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐰" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0F-T3-gKi" userLabel="RabbitLabel">
-                                                <rect key="frame" x="166.66666666666663" y="0.0" width="166.33333333333337" height="55"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJz-xU-gms" userLabel="QuizTitle">
+                                        <rect key="frame" x="115.66666666666666" y="0.0" width="121.66666666666666" height="34.333333333333336"/>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeO-D4-WAE">
+                                        <rect key="frame" x="130.66666666666666" y="54.333333333333321" width="91.666666666666657" height="20.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2L-DS-ISs">
+                                        <rect key="frame" x="139.66666666666666" y="94.666666666666629" width="74" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Start quiz"/>
+                                        <connections>
+                                            <segue destination="8dv-8t-Tjq" kind="show" id="djb-pq-8jU"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="tww-cS-8bp" firstAttribute="leading" secondItem="yHI-oS-uHv" secondAttribute="leading" id="1VX-fJ-m06"/>
-                                    <constraint firstAttribute="trailing" secondItem="xQ2-C1-HAs" secondAttribute="trailing" id="HtV-JW-N1y"/>
-                                    <constraint firstItem="xQ2-C1-HAs" firstAttribute="leading" secondItem="yHI-oS-uHv" secondAttribute="leading" id="muk-xc-oyE"/>
-                                    <constraint firstAttribute="trailing" secondItem="tww-cS-8bp" secondAttribute="trailing" id="qxB-av-4bS"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yHI-oS-uHv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Hvi-S2-qRc"/>
-                            <constraint firstAttribute="trailing" secondItem="yHI-oS-uHv" secondAttribute="trailing" constant="30" id="Q9q-E7-eec"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yHI-oS-uHv" secondAttribute="bottom" id="a7A-jh-z85"/>
-                            <constraint firstItem="yHI-oS-uHv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="e7s-o4-ces"/>
+                            <constraint firstItem="Ega-N3-bNI" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="GfG-FV-AFo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ega-N3-bNI" secondAttribute="trailing" constant="20" id="Hvp-l8-KvX"/>
+                            <constraint firstItem="Ega-N3-bNI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Kkp-kg-1bc"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="mainStackView" destination="yHI-oS-uHv" id="4mj-ol-5KY"/>
-                        <outlet property="titleStackView" destination="yd7-jF-2bu" id="VYH-jQ-H0b"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="58" y="-2"/>
+            <point key="canvasLocation" x="57.251908396946561" y="-2.1126760563380285"/>
         </scene>
         <!--Question-->
         <scene sceneID="Zpn-Aa-6wo">
@@ -109,7 +64,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CJ-aa-f6l">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CJ-aa-f6l">
                                 <rect key="frame" x="20" y="122.99999999999999" width="353" height="38.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
@@ -150,16 +105,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2mu-Ld-XRu">
-                                <rect key="frame" x="20" y="353" width="353" height="88.333333333333314"/>
+                                <rect key="frame" x="20" y="353" width="353" height="105"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are a 🐶 !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USF-SL-gt3">
-                                        <rect key="frame" x="36" y="0.0" width="281.33333333333331" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have answered 10 out of 20 questions" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USF-SL-gt3">
+                                        <rect key="frame" x="19.666666666666657" y="0.0" width="313.66666666666674" height="76.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPN-rA-cxj">
-                                        <rect key="frame" x="133" y="68" width="87.333333333333314" height="20.333333333333329"/>
+                                        <rect key="frame" x="133" y="84.666666666666686" width="87.333333333333314" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
