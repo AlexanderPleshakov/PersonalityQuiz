@@ -94,7 +94,9 @@ final class QuestionViewController: UIViewController {
     }
     
     @IBSegueAction func showResultsSegue(_ coder: NSCoder) -> ResultsViewController? {
-        return  ResultsViewController(coder: coder, responses: correctAnswers)
+        return  ResultsViewController(coder: coder,
+                                      correctAnswers: correctAnswers,
+                                      questionsCount: questions.count)
     }
     
 }

@@ -10,11 +10,13 @@ import UIKit
 final class ResultsViewController: UIViewController {
     
     // MARK: Properties
-    var responses: Int
+    private var correctAnswers: Int
+    private var questionsCount: Int
     
     // MARK: Init
-    init?(coder: NSCoder, responses: Int) {
-        self.responses = responses
+    init?(coder: NSCoder, correctAnswers: Int, questionsCount: Int) {
+        self.correctAnswers = correctAnswers
+        self.questionsCount = questionsCount
         
         super.init(coder: coder)
     }
@@ -41,12 +43,13 @@ final class ResultsViewController: UIViewController {
     
     private func configure() {
         navigationItem.hidesBackButton = true
+        descriptionLabel.isHidden = true
         
         displayResults()
     }
     
     private func displayResults() {
-
+        resultLabel.text = "You have answered \(correctAnswers) out of \(questionsCount) questions"
     }
     
     // MARK: Actions
