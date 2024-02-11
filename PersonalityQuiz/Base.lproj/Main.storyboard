@@ -64,8 +64,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tcpdump is a packet-sniffing Linux command that offers administrators the ability to monitor what?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CJ-aa-f6l">
-                                <rect key="frame" x="20" y="123" width="353" height="124.33333333333331"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CJ-aa-f6l">
+                                <rect key="frame" x="20" y="122.99999999999999" width="353" height="31.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -77,55 +77,55 @@
                                 <rect key="frame" x="20" y="341.66666666666669" width="353" height="238.00000000000006"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1q4-Nj-2lh">
-                                        <rect key="frame" x="148" y="0.0" width="57" height="33"/>
+                                        <rect key="frame" x="142" y="0.0" width="69" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Anser 1"/>
+                                        <state key="normal" title="Answer 1"/>
                                         <connections>
                                             <action selector="buttonAnswerTapped:" destination="SbW-ot-o9e" eventType="touchUpInside" id="rjC-bN-x71"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2m-p7-ULg">
-                                        <rect key="frame" x="147" y="41" width="59" height="33"/>
+                                        <rect key="frame" x="141" y="41" width="71" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Anser 2"/>
+                                        <state key="normal" title="Answer 2"/>
                                         <connections>
                                             <action selector="buttonAnswerTapped:" destination="SbW-ot-o9e" eventType="touchUpInside" id="dtx-jb-44B"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-hB-nyD">
-                                        <rect key="frame" x="147" y="82" width="59" height="33"/>
+                                        <rect key="frame" x="140.66666666666666" y="82" width="72" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Anser 3"/>
+                                        <state key="normal" title="Answer 3"/>
                                         <connections>
                                             <action selector="buttonAnswerTapped:" destination="SbW-ot-o9e" eventType="touchUpInside" id="HKr-Q3-ABb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ly2-Sp-C6n">
-                                        <rect key="frame" x="146.66666666666666" y="123" width="60" height="33"/>
+                                        <rect key="frame" x="140.66666666666666" y="123" width="72" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Anser 4"/>
+                                        <state key="normal" title="Answer 4"/>
                                         <connections>
                                             <action selector="buttonAnswerTapped:" destination="SbW-ot-o9e" eventType="touchUpInside" id="8tW-6L-P0b"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUg-jJ-1SC">
-                                        <rect key="frame" x="147" y="164" width="59" height="33"/>
+                                        <rect key="frame" x="141" y="164" width="71" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Anser 5"/>
+                                        <state key="normal" title="Answer 5"/>
                                         <connections>
                                             <action selector="buttonAnswerTapped:" destination="SbW-ot-o9e" eventType="touchUpInside" id="ayl-ok-49s"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qry-JQ-9ul">
-                                        <rect key="frame" x="146.66666666666666" y="204.99999999999994" width="60" height="33"/>
+                                        <rect key="frame" x="140.66666666666666" y="204.99999999999994" width="72" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Anser 6"/>
+                                        <state key="normal" title="Answer 6"/>
                                         <connections>
                                             <action selector="buttonAnswerTapped:" destination="SbW-ot-o9e" eventType="touchUpInside" id="2jR-kU-QoY"/>
                                         </connections>

@@ -10,7 +10,7 @@ import UIKit
 final class QuestionViewController: UIViewController {
     
     // MARK: Properties
-    private var answersChosen: [String] = []
+    private var correctAnswers = 0
     private var questionIndex = 0
     private var questions: [QuestionProtocol] = [MockQuestion(
                                                     question: "tcpdump is a packet-sniffing Linux command that offers administrators the ability to monitor what?",
@@ -38,22 +38,59 @@ final class QuestionViewController: UIViewController {
         super.viewDidLoad()
         
         configure()
+        
     }
     
     // MARK: Methods
     
     private func configure() {
-        
+        updateUI()
+        questionProgressView.setProgress(0, animated: false)
+    }
+    
+    private func updateUI() {
+        questionLabel.text = questions[questionIndex].question
+        for (index, button) in AnswerButtons.enumerated() {
+            if let answer = questions[questionIndex].answers[index] {
+                button.isHidden = false
+                button.setTitle(answer, for: .normal)
+            } else {
+                button.isHidden = true
+            }
+        }
+        updateProgress()
+    }
+    
+    private func updateProgress() {
+        let currentProgress = questionProgressView.progress + Float(1)/Float(questions.count)
+        questionProgressView.setProgress(currentProgress, animated: true)
+    }
+    
+    private func nextQuestionOrResults(sender: UIButton) {
+        let currentQuestion = questions[questionIndex]
+        for index in 0..<currentQuestion.answers.count where
+        currentQuestion.correctAnswers[index] {
+            if sender.titleLabel?.text == currentQuestion.answers[index] {
+                correctAnswers += 1
+            }
+        }
+        questionIndex += 1
+        if questionIndex == questions.count {
+            updateProgress()
+            return
+        }
+        updateUI()
     }
     
     // MARK: Actions
     
     @IBAction func buttonAnswerTapped(_ sender: UIButton) {
+        nextQuestionOrResults(sender: sender)
     }
     
     
-    @IBSegueAction func showResultsSegue(_ coder: NSCoder) -> ResultsViewController? {
-        return  ResultsViewController(coder: coder, responses: answersChosen)
-    }
+//    @IBSegueAction func showResultsSegue(_ coder: NSCoder) -> ResultsViewController? {
+//        return  ResultsViewController(coder: coder, responses: answersChosen)
+//    }
     
 }
