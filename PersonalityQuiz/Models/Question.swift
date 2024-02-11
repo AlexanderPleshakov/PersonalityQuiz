@@ -8,13 +8,14 @@
 import Foundation
 
 
-
 struct Question {
-    var text: String
-    var type: ResponseType
-    var answers: [Answer]
-}
-
-enum ResponseType {
-    case single, multiple, ranged
+    var id: Int
+    var question: String
+    var description: String
+    var answers: [String?]
+    var multipleCorrectAnswers: Bool
+    var correctAnswers: [Bool]
+    var explanation: String
+    var category: String
+    var difficulty: String
 }
