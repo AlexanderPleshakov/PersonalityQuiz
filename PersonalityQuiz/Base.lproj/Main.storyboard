@@ -221,7 +221,7 @@
         <!--Navigation Controller-->
         <scene sceneID="s8A-f3-K17">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8dv-8t-Tjq" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="8dv-8t-Tjq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="k20-1O-gdy"/>
                     <nil key="simulatedBottomBarMetrics"/>
