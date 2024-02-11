@@ -28,8 +28,9 @@ final class QuestionViewController: UIViewController {
     // MARK: Outlets
     
     @IBOutlet private weak var questionLabel: UILabel!
-    
     @IBOutlet private weak var questionProgressView: UIProgressView!
+    
+    @IBOutlet private var AnswerButtons: [UIButton]!
     
     // MARK: Life Cycle
     
@@ -46,6 +47,9 @@ final class QuestionViewController: UIViewController {
     }
     
     // MARK: Actions
+    
+    @IBAction func buttonAnswerTapped(_ sender: UIButton) {
+    }
     
     
     @IBSegueAction func showResultsSegue(_ coder: NSCoder) -> ResultsViewController? {
