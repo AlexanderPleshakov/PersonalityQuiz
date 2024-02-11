@@ -7,15 +7,26 @@
 
 import Foundation
 
+protocol QuestionProtocol {
+    var question: String { get }
+    var answers: [String?] { get }
+    var correctAnswers: [Bool] { get }
+}
 
-struct Question {
+struct MockQuestion: QuestionProtocol {
+    var question: String
+    var answers: [String?]
+    var correctAnswers: [Bool]
+}
+
+struct Question: QuestionProtocol {
     var id: Int
     var question: String
-    var description: String
+    var description: String?
     var answers: [String?]
     var multipleCorrectAnswers: Bool
     var correctAnswers: [Bool]
-    var explanation: String
+    var explanation: String?
     var category: String
     var difficulty: String
 }
