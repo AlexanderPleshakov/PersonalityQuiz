@@ -10,10 +10,10 @@ import UIKit
 final class ResultsViewController: UIViewController {
     
     // MARK: Properties
-    var responses: [String]
+    var responses: Int
     
     // MARK: Init
-    init?(coder: NSCoder, responses: [String]) {
+    init?(coder: NSCoder, responses: Int) {
         self.responses = responses
         
         super.init(coder: coder)

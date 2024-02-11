@@ -45,10 +45,10 @@ final class QuestionViewController: UIViewController {
     
     private func configure() {
         updateUI()
-        questionProgressView.setProgress(0, animated: false)
     }
     
     private func updateUI() {
+        navigationItem.title = "Question \(questionIndex + 1)"
         questionLabel.text = questions[questionIndex].question
         for (index, button) in AnswerButtons.enumerated() {
             if let answer = questions[questionIndex].answers[index] {
@@ -62,8 +62,12 @@ final class QuestionViewController: UIViewController {
     }
     
     private func updateProgress() {
-        let currentProgress = questionProgressView.progress + Float(1)/Float(questions.count)
-        questionProgressView.setProgress(currentProgress, animated: true)
+        questionProgressView.setProgress(Float(questionIndex)/Float(questions.count), animated: true)
+    }
+    
+    private func showResults(sender: UIButton) {
+        updateProgress()
+        performSegue(withIdentifier: "Results", sender: sender)
     }
     
     private func nextQuestionOrResults(sender: UIButton) {
@@ -75,8 +79,9 @@ final class QuestionViewController: UIViewController {
             }
         }
         questionIndex += 1
+        
         if questionIndex == questions.count {
-            updateProgress()
+            showResults(sender: sender)
             return
         }
         updateUI()
@@ -88,9 +93,8 @@ final class QuestionViewController: UIViewController {
         nextQuestionOrResults(sender: sender)
     }
     
-    
-//    @IBSegueAction func showResultsSegue(_ coder: NSCoder) -> ResultsViewController? {
-//        return  ResultsViewController(coder: coder, responses: answersChosen)
-//    }
+    @IBSegueAction func showResultsSegue(_ coder: NSCoder) -> ResultsViewController? {
+        return  ResultsViewController(coder: coder, responses: correctAnswers)
+    }
     
 }
