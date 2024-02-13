@@ -8,9 +8,6 @@
 import UIKit
 
 final class IntroductionQuizViewController: UIViewController {
-
-    @IBOutlet private weak var titleStackView: UIStackView!
-    @IBOutlet private weak var mainStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +16,7 @@ final class IntroductionQuizViewController: UIViewController {
     }
     
     private func configure() {
-        titleStackView.isUserInteractionEnabled = true
-        mainStackView.isUserInteractionEnabled = true
+        
     }
     
     @IBAction func unwindToQuizIntroduction(segue: UIStoryboardSegue) {

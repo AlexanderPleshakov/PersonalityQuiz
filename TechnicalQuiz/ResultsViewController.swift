@@ -10,11 +10,13 @@ import UIKit
 final class ResultsViewController: UIViewController {
     
     // MARK: Properties
-    var responses: [Answer]
+    private var correctAnswers: Int
+    private var questionsCount: Int
     
     // MARK: Init
-    init?(coder: NSCoder, responses: [Answer]) {
-        self.responses = responses
+    init?(coder: NSCoder, correctAnswers: Int, questionsCount: Int) {
+        self.correctAnswers = correctAnswers
+        self.questionsCount = questionsCount
         
         super.init(coder: coder)
     }
@@ -41,27 +43,13 @@ final class ResultsViewController: UIViewController {
     
     private func configure() {
         navigationItem.hidesBackButton = true
+        descriptionLabel.isHidden = true
         
         displayResults()
     }
     
-    private func calculatePersonalityResults() -> AnimalType {
-        let frequencyOfAnswers = responses.reduce(into: [:]) { (counts, answer) in
-            counts[answer.type, default: 0] += 1
-        }
-        
-        let mostCommonAnswer = frequencyOfAnswers.sorted { $0.1 >
-           $1.1 }.first!.key
-        
-        return mostCommonAnswer
-
-    }
-    
     private func displayResults() {
-        let result = calculatePersonalityResults()
-        
-        resultLabel.text = "You are a \(result.rawValue)"
-        descriptionLabel.text = result.definition
+        resultLabel.text = "You have answered \(correctAnswers) out of \(questionsCount) questions"
     }
     
     // MARK: Actions
