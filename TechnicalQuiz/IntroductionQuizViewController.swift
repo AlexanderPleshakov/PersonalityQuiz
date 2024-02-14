@@ -21,7 +21,7 @@ final class IntroductionQuizViewController: UIViewController {
     
     init?(coder: NSCoder, quizTitle: String?) {
         self.quizTitle = quizTitle
-        print("init")
+        
         super.init(coder: coder)
     }
     

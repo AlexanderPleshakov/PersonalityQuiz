@@ -37,7 +37,6 @@ final class QuizzesViewController: UIViewController {
         } else {
             quizTitle = nil
         }
-        print("return")
         return IntroductionQuizViewController(coder: coder, quizTitle: quizTitle)
     }
 }
