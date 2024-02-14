@@ -38,12 +38,12 @@ final class QuestionViewController: UIViewController {
         super.viewDidLoad()
         
         configure()
-        
     }
     
     // MARK: Methods
     
     private func configure() {
+        navigationItem.hidesBackButton = true
         updateUI()
     }
     
@@ -62,12 +62,17 @@ final class QuestionViewController: UIViewController {
     }
     
     private func updateProgress() {
-        questionProgressView.setProgress(Float(questionIndex)/Float(questions.count), animated: true)
+        let progress = Float(questionIndex)/Float(questions.count)
+        questionProgressView.setProgress(progress, animated: true)
     }
     
     private func showResults(sender: UIButton) {
+        defer {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
+                self?.performSegue(withIdentifier: "Results", sender: sender)
+            }
+        }
         updateProgress()
-        performSegue(withIdentifier: "Results", sender: sender)
     }
     
     private func nextQuestionOrResults(sender: UIButton) {
@@ -79,7 +84,6 @@ final class QuestionViewController: UIViewController {
             }
         }
         questionIndex += 1
-        
         if questionIndex == questions.count {
             showResults(sender: sender)
             return
