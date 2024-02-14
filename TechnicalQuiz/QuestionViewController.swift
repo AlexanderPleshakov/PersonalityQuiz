@@ -44,6 +44,7 @@ final class QuestionViewController: UIViewController {
     // MARK: Methods
     
     private func configure() {
+        navigationItem.hidesBackButton = true
         updateUI()
     }
     
