@@ -9,22 +9,36 @@ import UIKit
 
 final class QuizzesViewController: UIViewController {
     // MARK: Properties
-    let allQuizzes = ["Linux", "BASH", "PHP", "Docker", "HTML", "MySQL", "WordPress", "Laravel", "Kubernetes", "JavaScript", "DecOps"]
+    let allQuizzes = ["Linux", "BASH", "PHP", "Docker", "HTML", "MySQL", "WordPress", "Laravel", "Kubernetes", "JavaScript", "DevOps"]
     
     // MARK: Outlets
     
-    @IBOutlet weak var QuizzesTableView: UITableView!
+    @IBOutlet weak var quizzesTableView: UITableView!
     
     // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configure()
     }
     
     // MARK: Methods
     
-    private func configure() {
-        
+    private func configure() { }
+    
+    // MARK: Actions
+    
+    @IBSegueAction func goToQuizIntroduction(_ coder: NSCoder, sender: Any?) -> IntroductionQuizViewController? {
+        let quizTitle: String?
+        if let cell = sender as? UITableViewCell,
+           let indexPath = quizzesTableView.indexPath(for: cell) {
+            quizTitle = allQuizzes[indexPath.row]
+        } else {
+            quizTitle = nil
+        }
+        print("return")
+        return IntroductionQuizViewController(coder: coder, quizTitle: quizTitle)
     }
 }
 
@@ -54,3 +68,5 @@ extension QuizzesViewController: UITableViewDelegate {
         performSegue(withIdentifier: "StartQuiz", sender: tableView.cellForRow(at: indexPath))
     }
 }
+
+

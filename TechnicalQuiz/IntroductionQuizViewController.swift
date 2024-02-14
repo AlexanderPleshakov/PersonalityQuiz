@@ -8,6 +8,28 @@
 import UIKit
 
 final class IntroductionQuizViewController: UIViewController {
+    // MARK: Properties
+    
+    var quizTitle: String?
+    
+    // MARK: Outlets
+    
+    @IBOutlet weak var quizDescriptionLabel: UILabel!
+    @IBOutlet weak var quizTitleLabel: UILabel!
+    
+    // MARK: Init
+    
+    init?(coder: NSCoder, quizTitle: String?) {
+        self.quizTitle = quizTitle
+        print("init")
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,9 +37,13 @@ final class IntroductionQuizViewController: UIViewController {
         configure()
     }
     
+    // MARK: Methods
+    
     private func configure() {
-        
+        quizTitleLabel.text = quizTitle
     }
+    
+    // MARK: Actions
     
     @IBAction func unwindToQuizIntroduction(segue: UIStoryboardSegue) {
         

@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-802" y="-2"/>
         </scene>
-        <!--Quizzes View Controller-->
+        <!--Quizzes-->
         <scene sceneID="RUF-sC-SQm">
             <objects>
                 <viewController id="pa3-K7-RSQ" customClass="QuizzesViewController" customModule="TechnicalQuiz" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,10 +69,10 @@
                             <constraint firstItem="rCS-Rg-Kuo" firstAttribute="leading" secondItem="60k-G7-bTN" secondAttribute="leading" id="aWv-If-zFz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="13L-px-WrP"/>
+                    <navigationItem key="navigationItem" title="Quizzes" id="13L-px-WrP"/>
                     <connections>
-                        <outlet property="QuizzesTableView" destination="rCS-Rg-Kuo" id="fUO-xx-b8O"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="StartQuiz" id="pI7-oP-9JC"/>
+                        <outlet property="quizzesTableView" destination="rCS-Rg-Kuo" id="fUO-xx-b8O"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="StartQuiz" destinationCreationSelector="goToQuizIntroduction:sender:" id="pI7-oP-9JC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LA9-lc-J1Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -123,6 +123,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NnU-3Q-sZN"/>
+                    <connections>
+                        <outlet property="quizDescriptionLabel" destination="MeO-D4-WAE" id="dsr-Oi-Xs8"/>
+                        <outlet property="quizTitleLabel" destination="PJz-xU-gms" id="J1r-rx-iDR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
