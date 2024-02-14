@@ -36,7 +36,7 @@ extension QuizzesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "QuizCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "QuizCell", for: indexPath)
         
         var content = cell.defaultContentConfiguration()
         content.text = allQuizzes[indexPath.row]
@@ -47,3 +47,10 @@ extension QuizzesViewController: UITableViewDataSource {
 }
 
 // MARK: UITableViewDelegate
+
+extension QuizzesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        defer { tableView.deselectRow(at: indexPath, animated: true) }
+        performSegue(withIdentifier: "StartQuiz", sender: tableView.cellForRow(at: indexPath))
+    }
+}
