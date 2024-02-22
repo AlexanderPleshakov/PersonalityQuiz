@@ -19,14 +19,14 @@ struct MockQuestion: QuestionProtocol {
     var correctAnswers: [Bool]
 }
 
-struct Question: QuestionProtocol {
-    var id: Int
-    var question: String
-    var description: String?
-    var answers: [String?]
-    var multipleCorrectAnswers: Bool
-    var correctAnswers: [Bool]
-    var explanation: String?
-    var category: String
-    var difficulty: String
+struct Question: Codable {
+    let id: Int
+    let question: String
+    let answers: Answers
+    let multipleCorrectAnswers: Bool
+    let correctAnswers: CorrectAnswers
+    let correctAnswer: String
+    let tags: [Tag?]
+    let category: String
+    let difficulty: String
 }
