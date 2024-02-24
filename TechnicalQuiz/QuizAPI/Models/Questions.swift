@@ -19,8 +19,8 @@ struct MockQuestion: QuestionProtocol {
     var correctAnswers: [Bool]
 }
 
-// MARK: - QuestionElement
-struct QuestionElement: Codable {
+// MARK: - Question
+struct Question: Codable {
     let id: Int
     let question: String
     let answers: Answers
@@ -47,6 +47,6 @@ struct Tag: Codable {
     let name: String
 }
 
-typealias Questions = [QuestionElement]
+typealias Questions = [Question]
 
 
