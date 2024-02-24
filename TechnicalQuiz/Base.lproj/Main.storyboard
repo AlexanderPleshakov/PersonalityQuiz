@@ -227,12 +227,12 @@
                     <connections>
                         <outlet property="questionLabel" destination="8CJ-aa-f6l" id="RCm-hh-1Wp"/>
                         <outlet property="questionProgressView" destination="4L9-HM-du4" id="FDH-ex-4ru"/>
-                        <outletCollection property="AnswerButtons" destination="1q4-Nj-2lh" collectionClass="NSMutableArray" id="N8H-Yq-hIH"/>
-                        <outletCollection property="AnswerButtons" destination="i2m-p7-ULg" collectionClass="NSMutableArray" id="oiR-95-x1n"/>
-                        <outletCollection property="AnswerButtons" destination="xfb-hB-nyD" collectionClass="NSMutableArray" id="Eue-fd-lqT"/>
-                        <outletCollection property="AnswerButtons" destination="ly2-Sp-C6n" collectionClass="NSMutableArray" id="WMd-3S-3HT"/>
-                        <outletCollection property="AnswerButtons" destination="MUg-jJ-1SC" collectionClass="NSMutableArray" id="Ieh-3f-SbO"/>
-                        <outletCollection property="AnswerButtons" destination="Qry-JQ-9ul" collectionClass="NSMutableArray" id="IPd-xL-0HO"/>
+                        <outletCollection property="answerButtons" destination="1q4-Nj-2lh" collectionClass="NSMutableArray" id="N8H-Yq-hIH"/>
+                        <outletCollection property="answerButtons" destination="i2m-p7-ULg" collectionClass="NSMutableArray" id="oiR-95-x1n"/>
+                        <outletCollection property="answerButtons" destination="xfb-hB-nyD" collectionClass="NSMutableArray" id="Eue-fd-lqT"/>
+                        <outletCollection property="answerButtons" destination="ly2-Sp-C6n" collectionClass="NSMutableArray" id="WMd-3S-3HT"/>
+                        <outletCollection property="answerButtons" destination="MUg-jJ-1SC" collectionClass="NSMutableArray" id="Ieh-3f-SbO"/>
+                        <outletCollection property="answerButtons" destination="Qry-JQ-9ul" collectionClass="NSMutableArray" id="IPd-xL-0HO"/>
                         <segue destination="YkA-KM-IIt" kind="show" identifier="Results" destinationCreationSelector="showResultsSegue:" id="TiR-t8-l5w"/>
                     </connections>
                 </viewController>

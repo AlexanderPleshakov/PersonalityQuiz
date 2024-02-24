@@ -12,26 +12,14 @@ final class QuestionViewController: UIViewController {
     // MARK: Properties
     private var correctAnswers = 0
     private var questionIndex = 0
-//    private var questions: [QuestionProtocol] = [MockQuestion(
-//                                                    question: "tcpdump is a packet-sniffing Linux command that offers administrators the ability to monitor what?",
-//                                                    answers: ["Server performance", "Network traffic and activity", "Application performance", "Files and directories", nil, nil],
-//                                                    correctAnswers: [false, true, false, false, false, false]),
-//                                                 MockQuestion(
-//                                                    question: "How to list only the running containers?",
-//                                                    answers: ["docker list", "docker ps", "docker run", "docker print", nil, nil],
-//                                                    correctAnswers: [false, true, false, false, false, false]),
-//                                                 MockQuestion(
-//                                                    question: "Which HTML tag would be used to display power in expression (A+B)2 ?",
-//                                                    answers: ["<sup>", "<p>", "<b>", "<sub>", nil, nil],
-//                                                    correctAnswers: [true, false, false, false, false, false])]
-    private var questions: Questions?
+    private var questions: Questions = []
     
     // MARK: Outlets
     
     @IBOutlet private weak var questionLabel: UILabel!
     @IBOutlet private weak var questionProgressView: UIProgressView!
     
-    @IBOutlet private var AnswerButtons: [UIButton]!
+    @IBOutlet private var answerButtons: [UIButton]!
     
     // MARK: Life Cycle
     
@@ -59,11 +47,11 @@ final class QuestionViewController: UIViewController {
     
     private func updateUI() {
         navigationItem.title = "Question \(questionIndex + 1)"
-        questionLabel.text = questions?[questionIndex].question
-        for (index, button) in AnswerButtons.enumerated() {
-            if let answer = questions?[questionIndex].answers {
+        questionLabel.text = questions[questionIndex].question
+        for (_, button) in answerButtons.enumerated() {
+            if let answer = questions[questionIndex].answers {
                 button.isHidden = false
-                button.setTitle(answer.answerA, for: .normal)
+                button.setTitle(answer, for: .normal)
             } else {
                 button.isHidden = true
             }
@@ -72,7 +60,7 @@ final class QuestionViewController: UIViewController {
     }
     
     private func updateProgress() {
-        let progress = Float(questionIndex)/Float(questions!.count)
+        let progress = Float(questionIndex)/Float(questions.count)
         questionProgressView.setProgress(progress, animated: true)
     }
     

@@ -26,32 +26,36 @@ enum Link {
 final class NetworkManager {
     static let shared = NetworkManager()
     
-    var questions: Questions?
-    
     init() {}
     
-    func fetchBash() {
-        let fetchRequest = URLRequest(url: Link.bash.url)
+    enum NetworkError: Error {
+        case codeError
+    }
+    
+    func fetch(url: URL, handler: @escaping (Result<Data, Error>) -> Void) {
+        let fetchRequest = URLRequest(url: url)
         
         let task = URLSession.shared.dataTask(with: fetchRequest) { [weak self] (data, response, error) -> Void in
-            if error != nil {
-                print(String(describing: error))
+            if let error = error {
+                print(String(describing: "Ошибка fetch: \(error)"))
+                handler(.failure(error))
                 return
             }
             
-            let httpResponse = response as? HTTPURLResponse
-            print("code:" + String(describing: httpResponse?.statusCode))
-            
-            guard let data = data else { return }
-            
-            let jsonDecoder = JSONDecoder()
-            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-            if let questions = try? jsonDecoder.decode(Questions.self, from: data) {
-                //print(questions)
-                self?.questions = questions
-            } else {
-                print("decode error")
+            if let response = response as? HTTPURLResponse {
+                if response.statusCode < 200 || response.statusCode >= 300 {
+                    handler(.failure(NetworkError.codeError))
+                    return
+                }
             }
+            
+            
+            guard let data = data else {
+                return
+            }
+            handler(.success(data))
+            
+            
         }
         task.resume()
     }
