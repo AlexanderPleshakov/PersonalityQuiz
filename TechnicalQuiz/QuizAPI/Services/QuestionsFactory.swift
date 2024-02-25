@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol QuestionsFactoryDelegate {
-    func didLoadData()
-    func didFailToLoadData()
-}
-
 final class QuestionsFactory {
     var questions = [QuizQuestion]()
     let questionsLoader = QuestionsLoader()
