@@ -22,6 +22,7 @@
 		16D409A32B89DA02005459B3 /* QuestionsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D409A22B89DA02005459B3 /* QuestionsLoader.swift */; };
 		16D409A52B8A04BD005459B3 /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D409A42B8A04BD005459B3 /* QuizQuestion.swift */; };
 		16D409A82B8BBEC1005459B3 /* QuestionsFactoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D409A72B8BBEC1005459B3 /* QuestionsFactoryDelegate.swift */; };
+		16D409AB2B8BE2BF005459B3 /* TypeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D409AA2B8BE2BF005459B3 /* TypeConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		16D409A22B89DA02005459B3 /* QuestionsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsLoader.swift; sourceTree = "<group>"; };
 		16D409A42B8A04BD005459B3 /* QuizQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestion.swift; sourceTree = "<group>"; };
 		16D409A72B8BBEC1005459B3 /* QuestionsFactoryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsFactoryDelegate.swift; sourceTree = "<group>"; };
+		16D409AA2B8BE2BF005459B3 /* TypeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeConverter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				16D4099E2B88C346005459B3 /* NetworkManager.swift */,
 				16D409A02B89D5CE005459B3 /* QuestionsFactory.swift */,
 				16D409A22B89DA02005459B3 /* QuestionsLoader.swift */,
+				16D409AA2B8BE2BF005459B3 /* TypeConverter.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				167487942B6D4B730096EE78 /* IntroductionQuizViewController.swift in Sources */,
 				167487902B6D4B730096EE78 /* AppDelegate.swift in Sources */,
 				16D409A32B89DA02005459B3 /* QuestionsLoader.swift in Sources */,
+				16D409AB2B8BE2BF005459B3 /* TypeConverter.swift in Sources */,
 				16D409A12B89D5CE005459B3 /* QuestionsFactory.swift in Sources */,
 				16B5ADFA2B6D940600B94BE8 /* QuestionViewController.swift in Sources */,
 				16D4099F2B88C346005459B3 /* NetworkManager.swift in Sources */,
