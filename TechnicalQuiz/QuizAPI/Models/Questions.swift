@@ -7,18 +7,6 @@
 import Foundation
 
 
-protocol QuestionProtocol {
-    var question: String { get }
-    var answers: [String?] { get }
-    var correctAnswers: [Bool] { get }
-}
-
-struct MockQuestion: QuestionProtocol {
-    var question: String
-    var answers: [String?]
-    var correctAnswers: [Bool]
-}
-
 // MARK: - Question
 struct Question: Codable {
     let id: Int
@@ -40,7 +28,7 @@ struct Answers: Codable {
 // MARK: - CorrectAnswers
 struct CorrectAnswers: Codable {
     let answerACorrect, answerBCorrect, answerCCorrect,
-        answerDCorrect, answerECorrect, answerFCorrect: String?
+        answerDCorrect, answerECorrect, answerFCorrect: String
 }
 
 struct Tag: Codable {

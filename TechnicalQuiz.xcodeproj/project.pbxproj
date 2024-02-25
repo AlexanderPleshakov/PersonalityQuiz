@@ -20,6 +20,7 @@
 		16D4099F2B88C346005459B3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4099E2B88C346005459B3 /* NetworkManager.swift */; };
 		16D409A12B89D5CE005459B3 /* QuestionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D409A02B89D5CE005459B3 /* QuestionsFactory.swift */; };
 		16D409A32B89DA02005459B3 /* QuestionsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D409A22B89DA02005459B3 /* QuestionsLoader.swift */; };
+		16D409A52B8A04BD005459B3 /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D409A42B8A04BD005459B3 /* QuizQuestion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		16D4099E2B88C346005459B3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		16D409A02B89D5CE005459B3 /* QuestionsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsFactory.swift; sourceTree = "<group>"; };
 		16D409A22B89DA02005459B3 /* QuestionsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsLoader.swift; sourceTree = "<group>"; };
+		16D409A42B8A04BD005459B3 /* QuizQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		166D49312B6E681B00F0095A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				16D409A42B8A04BD005459B3 /* QuizQuestion.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				16D409A12B89D5CE005459B3 /* QuestionsFactory.swift in Sources */,
 				16B5ADFA2B6D940600B94BE8 /* QuestionViewController.swift in Sources */,
 				16D4099F2B88C346005459B3 /* NetworkManager.swift in Sources */,
+				16D409A52B8A04BD005459B3 /* QuizQuestion.swift in Sources */,
 				166D49332B6E683C00F0095A /* Questions.swift in Sources */,
 				16B5ADFC2B6D942000B94BE8 /* ResultsViewController.swift in Sources */,
 				161A63AB2B7C7E50007B29F1 /* QuizzesViewController.swift in Sources */,

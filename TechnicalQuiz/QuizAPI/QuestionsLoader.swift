@@ -9,8 +9,8 @@ import Foundation
 
 final class QuestionsLoader {
     
-    func loadQuestions(handler: @escaping (Result<Questions, Error>) -> Void) {
-        NetworkManager.shared.fetch(url: Link.bash.url) { result in
+    func loadQuestions(url: URL, handler: @escaping (Result<Questions, Error>) -> Void) {
+        NetworkManager.shared.fetch(url: url) { result in
             switch result {
             case .success(let data):
                 let jsonDecoder = JSONDecoder()

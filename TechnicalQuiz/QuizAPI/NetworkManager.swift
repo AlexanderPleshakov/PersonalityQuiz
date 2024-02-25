@@ -35,7 +35,7 @@ final class NetworkManager {
     func fetch(url: URL, handler: @escaping (Result<Data, Error>) -> Void) {
         let fetchRequest = URLRequest(url: url)
         
-        let task = URLSession.shared.dataTask(with: fetchRequest) { [weak self] (data, response, error) -> Void in
+        let task = URLSession.shared.dataTask(with: fetchRequest) { (data, response, error) -> Void in
             if let error = error {
                 print(String(describing: "Ошибка fetch: \(error)"))
                 handler(.failure(error))
@@ -49,13 +49,10 @@ final class NetworkManager {
                 }
             }
             
-            
             guard let data = data else {
                 return
             }
             handler(.success(data))
-            
-            
         }
         task.resume()
     }
