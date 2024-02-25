@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol QuestionsFactoryDelegate {
+protocol QuestionsFactoryDelegate: AnyObject {
     func didLoadData()
     func didFailToLoadData()
 }

@@ -12,7 +12,9 @@ final class QuestionViewController: UIViewController {
     // MARK: Properties
     private var correctAnswers = 0
     private var questionIndex = 0
-    private var questions: Questions = []
+    private var questions = [QuizQuestion]()
+    
+    private var questionsFactory: QuestionsFactory?
     
     // MARK: Outlets
     
@@ -25,17 +27,9 @@ final class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var networkManager = NetworkManager.shared
-        networkManager.fetchBash()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
-            self?.questions = networkManager.questions
-            print(self?.questions)
-        }
-        
-        
-       // configure()
+
+        questionsFactory = QuestionsFactory(delegate: self)
+        questionsFactory?.loadQuizQuestions()
     }
     
     // MARK: Methods
@@ -98,7 +92,28 @@ final class QuestionViewController: UIViewController {
     @IBSegueAction func showResultsSegue(_ coder: NSCoder) -> ResultsViewController? {
         return  ResultsViewController(coder: coder,
                                       correctAnswers: correctAnswers,
-                                      questionsCount: questions!.count)
+                                      questionsCount: questions.count)
     }
     
+}
+
+// MARK: QuestionsFactoryDelegate
+
+extension QuestionViewController: QuestionsFactoryDelegate {
+    func didLoadData() {
+        guard let questionsFactory = questionsFactory else { return }
+        if questionsFactory.questions.isEmpty {
+            print("data loading error")
+            return
+        }
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.questions = questionsFactory.questions
+            self?.configure()
+        }
+    }
+    
+    func didFailToLoadData() {
+        print("did fail to load data")
+    }
 }
