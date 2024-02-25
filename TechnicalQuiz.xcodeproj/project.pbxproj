@@ -23,6 +23,7 @@
 		16D409A52B8A04BD005459B3 /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D409A42B8A04BD005459B3 /* QuizQuestion.swift */; };
 		16D409A82B8BBEC1005459B3 /* QuestionsFactoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D409A72B8BBEC1005459B3 /* QuestionsFactoryDelegate.swift */; };
 		16D409AB2B8BE2BF005459B3 /* TypeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D409AA2B8BE2BF005459B3 /* TypeConverter.swift */; };
+		16D409AD2B8BE4C2005459B3 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D409AC2B8BE4C2005459B3 /* Link.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		16D409A42B8A04BD005459B3 /* QuizQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestion.swift; sourceTree = "<group>"; };
 		16D409A72B8BBEC1005459B3 /* QuestionsFactoryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsFactoryDelegate.swift; sourceTree = "<group>"; };
 		16D409AA2B8BE2BF005459B3 /* TypeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeConverter.swift; sourceTree = "<group>"; };
+		16D409AC2B8BE4C2005459B3 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				166D49322B6E683C00F0095A /* Questions.swift */,
+				16D409AC2B8BE4C2005459B3 /* Link.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				167487942B6D4B730096EE78 /* IntroductionQuizViewController.swift in Sources */,
+				16D409AD2B8BE4C2005459B3 /* Link.swift in Sources */,
 				167487902B6D4B730096EE78 /* AppDelegate.swift in Sources */,
 				16D409A32B89DA02005459B3 /* QuestionsLoader.swift in Sources */,
 				16D409AB2B8BE2BF005459B3 /* TypeConverter.swift in Sources */,
