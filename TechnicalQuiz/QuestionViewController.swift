@@ -42,8 +42,8 @@ final class QuestionViewController: UIViewController {
     private func updateUI() {
         navigationItem.title = "Question \(questionIndex + 1)"
         questionLabel.text = questions[questionIndex].question
-        for (_, button) in answerButtons.enumerated() {
-            if let answer = questions[questionIndex].answers {
+        for (index, button) in answerButtons.enumerated() {
+            if let answer = questions[questionIndex].answers[index] {
                 button.isHidden = false
                 button.setTitle(answer, for: .normal)
             } else {
@@ -68,19 +68,19 @@ final class QuestionViewController: UIViewController {
     }
     
     private func nextQuestionOrResults(sender: UIButton) {
-//        let currentQuestion = questions![questionIndex]
-//        for index in 0..<currentQuestion.answers.answerA where
-//        currentQuestion.correctAnswers[index] {
-//            if sender.titleLabel?.text == currentQuestion.answers[index] {
-//                correctAnswers += 1
-//            }
-//        }
-//        questionIndex += 1
-//        if questionIndex == questions!.count {
-//            showResults(sender: sender)
-//            return
-//        }
-//        updateUI()
+        let currentQuestion = questions[questionIndex]
+        for index in 0..<currentQuestion.answers.count where
+        currentQuestion.correctAnswers[index] {
+            if sender.titleLabel?.text == currentQuestion.answers[index] {
+                correctAnswers += 1
+            }
+        }
+        questionIndex += 1
+        if questionIndex == questions.count {
+            showResults(sender: sender)
+            return
+        }
+        updateUI()
     }
     
     // MARK: Actions

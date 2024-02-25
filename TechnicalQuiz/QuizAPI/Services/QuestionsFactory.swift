@@ -69,6 +69,7 @@ final class QuestionsFactory {
                 correctAnswer: question.correctAnswer,
                 tags: tags, category: question.category,
                 difficulty: question.difficulty)
+            result.append(quizQuestion)
         }
         
         return result
