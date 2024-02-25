@@ -10,7 +10,7 @@ import UIKit
 final class QuestionsFactory {
     var questions = [QuizQuestion]()
     let questionsLoader = QuestionsLoader()
-    let delegate: QuestionsFactoryDelegate
+    weak var delegate: QuestionsFactoryDelegate?
     
     init(delegate: QuestionsFactoryDelegate) {
         self.delegate = delegate
@@ -76,14 +76,16 @@ final class QuestionsFactory {
     
     func loadQuizQuestions() {
         questionsLoader.loadQuestions(url: Link.bash.url) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let questions):
-                self.questions = self.convertToQuizQuestions(questions: questions)
-                
-                delegate.didLoadData()
-            case .failure(_):
-                delegate.didFailToLoadData()
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                switch result {
+                case .success(let questions):
+                    self.questions = self.convertToQuizQuestions(questions: questions)
+                    
+                    self.delegate?.didLoadData()
+                case .failure(_):
+                    self.delegate?.didFailToLoadData()
+                }
             }
         }
     }
